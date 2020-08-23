@@ -15,8 +15,22 @@ const fetchData = async (searchTerm) => {
 };
 
 const input = document.querySelector("input");
+//------this code was the firstdraft. Ran a get request every time a key was pressed --------
+// input.addEventListener("input", (event) => {
+//   //access the changed input text. Whatever the user just put into the input.
+//   fetchData(event.target.value);
+// });
+let timeoutId;
 
-input.addEventListener("input", (event) => {
-  //access the changed input text. Whatever the user just put into the input.
-  fetchData(event.target.value);
-});
+const onInput = (event) => {
+  //
+  if (timeoutId) {
+    clearTimeout(timeoutId);
+  }
+  //what does timeoutID actually save?
+  timeoutId = setTimeout(() => {
+    fetchData(event.target.value);
+  }, 500);
+};
+
+input.addEventListener("input", onInput);
