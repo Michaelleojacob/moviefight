@@ -20,8 +20,10 @@ const input = document.querySelector("input");
 //   //access the changed input text. Whatever the user just put into the input.
 //   fetchData(event.target.value);
 // });
-let timeoutId;
 
+//in this code block: makes a get request for each keystroke a user does, but it also establishes a settimeout(()=>{}, 500). if another key is pressed within that settimeout limit, it will clear that get request.
+//tl;dr code will run the a get request once the user has stopped typing for 500ms.
+let timeoutId;
 const onInput = (event) => {
   //
   if (timeoutId) {
