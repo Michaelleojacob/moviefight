@@ -20,8 +20,9 @@ const debounce = (callback, delay = 500) => {
 };
 
 // could also do: const onInput = debounce(event) => {}
-const onInput = (event) => {
-  fetchData(event.target.value);
+const onInput = async (event) => {
+  const movies = await fetchData(event.target.value);
+  console.log(movies);
 };
 
 input.addEventListener("input", debounce(onInput, 500));

@@ -11,5 +11,5 @@ const fetchData = async (searchTerm) => {
       // i: "tt0848228",
     },
   });
-  console.log(response.data);
+  return response.data.Search;
 };
