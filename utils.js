@@ -37,13 +37,16 @@ const debounce = (callback, delay = 500) => {
 const onInput = async (event) => {
   const movies = await fetchData(event.target.value);
 
+  resultsWrapper.innerHTML = "";
   dropdown.classList.add("is-active");
 
   for (let movie of movies) {
     const option = document.createElement("a");
+    const imgSrc = movie.Poster === "N/A" ? "" : movie.Poster;
+
     option.classList.add("dropdown-item");
     option.innerHTML = `
-    <img src="${movie.Poster}" />
+    <img src="${imgSrc}" />
     ${movie.Title} 
     `;
     resultsWrapper.appendChild(option);
