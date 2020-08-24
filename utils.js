@@ -22,7 +22,14 @@ const debounce = (callback, delay = 500) => {
 // could also do: const onInput = debounce(event) => {}
 const onInput = async (event) => {
   const movies = await fetchData(event.target.value);
-  console.log(movies);
+  for (let movie of movies) {
+    const div = document.createElement("div");
+    div.innerHTML = `
+    <h1>${movie.Title}</h1>
+    <img src="${movie.Poster}" />
+    `;
+    document.querySelector("#target").appendChild(div);
+  }
 };
 
 input.addEventListener("input", debounce(onInput, 500));
