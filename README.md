@@ -2,9 +2,15 @@
 
 https://michaelleojacob.github.io/moviefight/
 
+## How to use:
+
+- Click the search bar and type in a movie.
+- Repeat for the second search bar
+
 ## About:
 
 - A user can search for two movies and the website will compare properties from those two movies and select a winner between the two selected movies per category.
+- Mobile friendly
 
 ## built with:
 
@@ -15,10 +21,6 @@ https://michaelleojacob.github.io/moviefight/
 
 ## final product:
 
-![HowTo](https://i.imgur.com/B8ZkGly.gif)
+![HowTo](https://i.imgur.com/4n5Isek.gif)
 
 ## future development:
-
-- Make app mobile friendly. Currently it is not responsive.
-- Fix the bug with being able to hit start multiple times, breaking the app.
-- Pause button currently causes issues with the animated border
