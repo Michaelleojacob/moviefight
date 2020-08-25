@@ -1,12 +1,12 @@
 //this 'movie' is just a movie summary, just a handful of properties
-const onMovieSelect = async (movie) => {
+const onMovieSelect = async (movie, summaryElement) => {
   const response = await axios.get("http://www.omdbapi.com/", {
     params: {
       apikey: "15c4edfb",
       i: movie.imdbID,
     },
   });
-  document.querySelector("#summary").innerHTML = movieTemplate(response.data);
+  summaryElement.innerHTML = movieTemplate(response.data);
 };
 
 //movieDetail is the detailed movie info, lots of properties about that movie
