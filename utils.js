@@ -22,10 +22,20 @@ const onMovieSelect = async (movie, summaryElement, side) => {
 
 const runComparison = () => {
   console.log("time for a comparison");
+  //find the first "article" element for each movie
+  //run a comparison on the # of awards
+  //then apply some styling to that "article" element
 };
 
 //movieDetail is the detailed movie info, lots of properties about that movie
 const movieTemplate = (movieDetail) => {
+  const dollars = parseInt(
+    movieDetail.BoxOffice.replace(/\$/g, "").replace(/,/g, "")
+  );
+  const metascore = parseInt(movieDetail.Metascore);
+  const imdbRating = parseFloat(movieDetail.imdbRating);
+  const imdbVotes = parseInt(movieDetail.imdbVotes.replace(/,/g, ""));
+  console.log(dollars, metascore, imdbRating, imdbVotes);
   return `
         <article class= "media">
             <figure class="media-left">
