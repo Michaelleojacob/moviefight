@@ -1,5 +1,8 @@
 //this 'movie' is just a movie summary, just a handful of properties
-const onMovieSelect = async (movie, summaryElement) => {
+let leftMovie;
+let rightMovie;
+
+const onMovieSelect = async (movie, summaryElement, side) => {
   const response = await axios.get("http://www.omdbapi.com/", {
     params: {
       apikey: "15c4edfb",
@@ -7,6 +10,18 @@ const onMovieSelect = async (movie, summaryElement) => {
     },
   });
   summaryElement.innerHTML = movieTemplate(response.data);
+  if (side === "left") {
+    leftMovie = response.data;
+  } else {
+    rightMovie = response.data;
+  }
+  if (leftMovie && rightMovie) {
+    runComparison();
+  }
+};
+
+const runComparison = () => {
+  console.log("time for a comparison");
 };
 
 //movieDetail is the detailed movie info, lots of properties about that movie
