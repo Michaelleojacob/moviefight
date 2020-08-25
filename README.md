@@ -9,8 +9,8 @@ https://michaelleojacob.github.io/moviefight/
 
 ## About:
 
-- A user can search for two movies and the website will compare properties from those two movies and select a winner between the two selected movies per category.
-- Mobile friendly
+- A user can search for two movies and the website will compare properties from those two movies. The website compares those properties, and will select a winner per category.
+- Mobile friendly.
 
 ## built with:
 
@@ -24,3 +24,7 @@ https://michaelleojacob.github.io/moviefight/
 ![HowTo](https://i.imgur.com/4n5Isek.gif)
 
 ## future development:
+
+- Refactor the 3 JS files to be more precise.
+- Change some of the styling.
+- Let the website declare a winner between the two selected movies by which movie won more categories.
